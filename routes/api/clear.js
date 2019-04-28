@@ -1,5 +1,5 @@
-var router = require("express").Router();
-var clearController = require("../../controllers/clear");
+const router = require("express").Router();
+const clearController = require("../../controllers/clear");
 
 router.get("/", clearController.clearDB);
 

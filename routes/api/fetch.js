@@ -1,5 +1,5 @@
-var router = require("express").Router();
-var fetchController = require("../../controllers/fetch");
+const router = require("express").Router();
+const fetchController = require("../../controllers/fetch");
 
 router.get("/", fetchController.scrapeHeadlines);
 
