@@ -17,8 +17,20 @@ body {
   bottom: 0;
   width: 100%;
   height: 80px;
-  color: white;
   background-color: #262626;
+}
+
+.footer > p {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin: 0;
+  font-weight: 800;
+  color: #f5f5f5;
 }
 
 .navbar {
@@ -40,7 +52,7 @@ body {
   bottom: 0;
   left: 0;
   z-index: auto;
-  background: linear-gradient(#333, black);
+  background: linear-gradient(#262626, black);
   opacity: 0.7;
 }
 
@@ -59,7 +71,7 @@ body {
 
 .jumbotron .caption h1,
 .jumbotron .caption p {
-  color: white;
+  color: #f5f5f5;
 }
 
 .jumbotron h1 {
@@ -82,14 +94,14 @@ body {
 }
 
 .card .card-header {
-  background-color: #2196f3;
+  background-color: lightslategray;
   position: relative;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
 .card .card-header h3 {
-  color: white;
+  color: #f5f5f5;
 }
 
 .card .card-header .btn {
@@ -107,23 +119,11 @@ body {
 }
 
 .card .card-header .article-link {
-  color: white;
+  color: #f5f5f5;
   display: inline-block;
   width: 80%;
 }
 
-.footer > .container > p {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  margin: 0;
-  font-weight: 800;
-  background: #0c7cd5;
-}
 
 .navbar-nav > li > a.scrape-new,
 .navbar-nav > li > a.clear {
@@ -131,16 +131,16 @@ body {
   margin-top: 10px;
   margin-left: 10px;
   font-weight: 800;
-  color: white;
+  color: #f5f5f5;
 }
 
 .navbar-nav > li > a.scrape-new:hover,
 .navbar-nav > li > a.clear:hover {
-  background: #4caf50;
+  background: lightslategray;
 }
 
 .navbar-nav > li > a.scrape-new:active {
-  background: #e51c23;
+  background: #262626;
 }
 
 .scrape-new {
