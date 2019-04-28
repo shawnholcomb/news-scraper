@@ -8,19 +8,11 @@ let scrape = function() {
     let articles = [];
 
     $("div.css-1100km").each(function(i, element) {
-      let head = $(this)
-        .find("h2")
-        .text()
-        .trim();
+      let head = $(this).find("h2").text().trim();
 
-      let url = $(this)
-        .find("a")
-        .attr("href");
+      let url = $(this).find("a").attr("href");
 
-      let sum = $(this)
-        .find("p")
-        .text()
-        .trim();
+      let sum = $(this).find("p").text().trim();
 
       if (head && sum && url) {
         let headNeat = head.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
