@@ -1,42 +1,42 @@
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
-const exphbs = require('express-handlebars');
-const mongoose = require('mongoose');
+// Web Scraper Homework Solution Example
+// (be sure to watch the video to see
+// how to operate the site in the browser)
+// -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
-// Middleware
-app.use(express.urlencoded({ extended: false }));
+// Require our dependencies
+var express = require("express");
+var mongoose = require("mongoose");
+var exphbs = require("express-handlebars");
+
+// Set up our port to be either the host's designated port, or 3000
+var PORT = process.env.PORT || 3000;
+
+// Instantiate our Express App
+var app = express();
+
+// Require our routes
+var routes = require("./routes");
+
+// Parse request body as JSON
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+// Make public a static folder
+app.use(express.static("public"));
 
-// Handlebars
-app.engine(
-    'handlebars',
-    exphbs({
-        defaultLayout: 'main'
-    })
-);
-app.set('view engine', 'handlebars');
+// Connect Handlebars to our Express app
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-// Routes
-require('./routes/routes')(app);
+// Have every request go through our route middleware
+app.use(routes);
 
-// DB call & connection
-var db = process.env.MONGODB_URI || "mongodb://localhost/mongoArticles";
-mongoose.connect(db, { useNewUrlParser: true},  function (error) {
-    // Log any errors connecting with mongoose
-    if (error) {
-        console.log(error);
-    }
-    // Or log a success message
-    else {
-        console.log("mongoose connection is successful");
-    }
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+// Listen on the port
+app.listen(PORT, function() {
+  console.log("Listening on http://localhost.com:" + PORT);
 });
-
-// Starting the server
-app.listen(PORT, function () {
-    console.log('App listening on http://localhost:' + PORT);
-});
-
-module.exports = app;

@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/shawnholcomb/news-scraper/issues"
   },
-  "homepage": "https://github.com/shawnholcomb/news-scraper#readme",
+  "homepage": "https://shawnholcomb.github.io/news-scraper",
   "dependencies": {
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
