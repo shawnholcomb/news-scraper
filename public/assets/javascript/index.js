@@ -44,7 +44,7 @@ $(document).ready(function() {
   function renderEmpty() {
     let emptyAlert = $(
       [
-        "<div class='alert alert-warning text-center'>",
+        "<div class='alert alert-info text-center'>",
         "<h4>Uh Oh. Looks like we don't have any new articles.</h4>",
         "</div>",
         "<div class='card'>",
